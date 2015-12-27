@@ -1,3 +1,13 @@
+Biddddddddd
+B
+B
+B
+C
+C
+C
+C
+C
+
 # Home_Camera
 
 1. Set up mote to capture images locally
