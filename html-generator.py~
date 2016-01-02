@@ -1,0 +1,8 @@
+"""Scans destination directory for .jpg files and generates index.html page with image and timestamp"""
+
+import os
+
+destination_directory = ("/var/www/html")
+
+print "hello world"
+print os.listdir(destination_directory)

@@ -2,11 +2,6 @@ source_dir=../
 destination_dir=/var/www/html/
 
 while true; do
-   # let "a=a+1"
-   # echo "$a"
-   # cp temp.txt /var/www/html/temp$a.txt 
-   # echo "Copying now"
-
     #get names of .jpg files in source directory
     echo "***Looking for .jpg files in source directory"
     source_files_num=$(ls -l $source_dir*.jpg | wc -l)
@@ -25,7 +20,8 @@ while true; do
     echo $destination_files
     echo " "
 
-    echo "***Copying .jpg files from source directory to destination directory without overwriting"
+    echo "***Copying .jpg files from source directory to destination directory"
+    echo "Do not overwrite existing files"
     cp -n ../*.jpg /var/www/html/
 
     echo "Sleeping for 5 seconds"
