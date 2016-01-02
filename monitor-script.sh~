@@ -12,8 +12,7 @@ while true; do
     source_files_num=$(ls -l $source_dir*.jpg | wc -l)
     source_files=$(ls -l $source_dir*.jpg)
     echo "The number of source files $source_files_num"
-    echo "The source files are"
-    echo $source_files
+    echo "The source files are $source_files"
     echo " "    
 
     #get names of .jpg files in destination directory
@@ -21,8 +20,7 @@ while true; do
     destination_files_num=$(ls -l $destination_dir*.jpg | wc -l) 
     destination_files=$(ls -l $destination_dir*.jpg)
     echo "The number of destination files $destination_files_num"
-    echo "The destination files are"
-    echo $destination_files
+    echo "The destination files are $destination_files"
     echo " "
 
     echo "***Copying .jpg files from source directory to destination directory without overwriting"
