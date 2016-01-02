@@ -2,6 +2,8 @@
 -Type this ipaddress into browser to view index.html (located in /var/www/html) (set up with Apache?)
 -Can ssh into this ipaddress from other local computers to access the computer
 
+To Learn: DLL, JSON, binary file with text header, ftp or ssh to host pc, ssh to local machine from internet, 
+
 # Home_Camera
 
 1. Set up mote to capture images locally
