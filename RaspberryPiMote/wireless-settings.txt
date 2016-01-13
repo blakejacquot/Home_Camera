@@ -1,0 +1,1 @@
+Wireless: CCMP, WPA2-PSK
