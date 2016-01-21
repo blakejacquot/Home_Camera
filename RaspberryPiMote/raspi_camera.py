@@ -8,7 +8,7 @@ import serial
 
 BAUD = 38400
 # this is the port on the Raspberry Pi; it will be different for serial ports on other systems.
-PORT = "/dev/ttyUSB0"
+PORT = "/dev/ttyAMA0"
 
 TIMEOUT = 0.5    # I needed a longer timeout than ladyada's 0.2 value
 SERIALNUM = 0    # start with 0, each camera should have a unique ID.
@@ -44,7 +44,8 @@ def reset():
 	s.write(cmd)
 	reply = s.read(100)
 	r = list(reply)
-	if checkreply( r, CMD_RESET ):
+	print(r)
+        if checkreply( r, CMD_RESET ):
 		return True
 	return False
 
