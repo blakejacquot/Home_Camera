@@ -8,6 +8,7 @@ while true; do
     DATE=$(date +%Y%m%d%H%M%S)
     echo $DATE
     raspistill -o image$DATE.jpg
-    scp image$DATE.jpg blakejacquot@192.168.1.6:/home/blakejacquot/Desktop/
+    scp -i /home/pi/.ssh/pi_key2 image$DATE.jpg blakejacquot@192.168.1.6:/home/blakejacquot/Desktop/  
     sleep 1
+    rm image$DATE.jpg
 done
