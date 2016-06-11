@@ -1,0 +1,9 @@
+"""Methods for helping manipulate jpeg files
+
+"""
+
+from subprocess import call
+
+sys_call = ["ls", "-l"]
+print sys_call
+call(sys_call)
