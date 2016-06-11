@@ -2,7 +2,7 @@ fswebcam notes
 
 fswebcam -r 640x480 test.jpg -S 2
 
--S instructs to skip a number of frames. Here it is 2.
+-S instructs to skip a number of frames. Here it is set to 2.
 
 -OpenCV to detect face and replace with lena or the Donald. Or object detection.
 -Security monitor for garage doing change detection. Burst mode if found. May use NIR diode for illumination
