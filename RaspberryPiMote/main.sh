@@ -22,10 +22,12 @@ while true; do
     
     #Take image
     echo "Taking an image"
-    raspistill -o $file_to_copy
-    
+    raspistill -v -o $file_to_copy
+    echo "Done taking image"
+
     #Copy image to server
     #scp -i /home/pi/.ssh/pi_key2 image$DATE.jpg blakejacquot@192.168.1.6:/home/blakejacquot/Desktop/pics/image$DATE.jpg  
+    echo "Copying file to host PC"
     $cmd
 
     #Remove file from host and sleep
