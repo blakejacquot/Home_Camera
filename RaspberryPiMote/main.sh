@@ -1,9 +1,7 @@
 #Next make python wrapper for raspistill...a driver we can use for scripting
 
 while true; do
-    echo 
-    
-    #Set variables
+    # Set variables
     sleep_time_sec=1
     DATE=$(date +%Y%m%d%H%M%S)
     dir_key="/home/pi/.ssh/pi_key2"
@@ -11,16 +9,19 @@ while true; do
     file_to_copy="image"$DATE".jpg"
     
     #Echo variables
-    echo $DATE
-    echo $file_to_copy
-    echo $dir_key
-    echo $dir_server
-    echo $dir_key $dir_server
+    echo "Echo variables for review"
+    echo "Today's date = " $DATE
+    echo "File to copy = " $file_to_copy
+    echo "Directory of public/private key = " $dir_key
+    echo "Directory on host PC to where files will be copied = " $dir_server
     
     #Construct scp command to execute
+    echo "Construct command to execute"
     cmd="scp -i $dir_key $file_to_copy $dir_server$file_to_copy"    
+    echo $cmd
     
     #Take image
+    echo "Taking an image"
     raspistill -o $file_to_copy
     
     #Copy image to server
@@ -28,6 +29,7 @@ while true; do
     $cmd
 
     #Remove file from host and sleep
+    echo "Remove file from local machine"
     rm *.jpg
     sleep $sleep_time_sec
 done
