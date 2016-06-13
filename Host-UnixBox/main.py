@@ -1,5 +1,5 @@
 """Starts all host-PC image processing and logging
-Assumes jpg files exist in ~/Desktop/pics
+Assumes jpg files exist in pic_dir. Compares them for changes
 
 Inputs: None
 Outputs: None
@@ -8,32 +8,43 @@ Outputs: None
 import jpeg_helpers as jp
 import numpy as np
 from subprocess import call
+import os
+import matplotlib.pyplot as plt
+
+pic_dir = "/home/blakejacquot/Desktop/pics"
 
 #sys_call = ["ls", "-l"]
 #print sys_call
 #call(sys_call)
-
-file_to_open4 = '/home/blakejacquot/Desktop/pics/image4.jpg'
-file_to_open5 = '/home/blakejacquot/Desktop/pics/image5.jpg'
-file_to_open6 = '/home/blakejacquot/Desktop/pics/image6.jpg'
-
-im4 = jp.Capture(file_to_open4)
-im5 = jp.Capture(file_to_open5)
-im6 = jp.Capture(file_to_open6)
-
-jp.detect_red_change(im4, im5)
-
-imshow(im4.red_dict['quad1'])
-
-result = jp.diffImg(im4.red, im5.red, im6.red)
+#jp.detect_red_change(im4, im5)
+#imshow(im4.red_dict['quad1'])
+#result = jp.diffImg(im4.red, im5.red, im6.red)  
+#imshow(result)
+#print np.sum(im4.red)
+#print np.sum(result)
+#print np.sum(result)
   
-imshow(result)
+files = os.listdir(pic_dir)
+collects = []
 
+for file in files:
+  file_path = os.path.join(pic_dir, file)
+  collects.append(jp.Capture(file_path))
 
-print np.sum(im4.red)
-print np.sum(result)
+diff_images = []  
+for i in range(1,len(collects)-1):
+  prior_cap = collects[i-1]  
+  curr_cap = collects[i]
+  next_cap = collects[i+1]  
+  diff_result = jp.diffImg(prior_cap.red, curr_cap.red, next_cap.red)
+  diff_images.append(diff_result)  
+  if np.sum(diff_result) > 5000000:
+    disp ('Change Detected')
 
-print np.sum(result)
+print(len(diff_images))
+for diff_image in diff_images:
+  fig = plt.figure()
+  imshow(diff_image
 
-if np.sum(result) > 5000000:
-  disp ('Change Detected')
+#plt_subplot(241)
+#plt.imshow
