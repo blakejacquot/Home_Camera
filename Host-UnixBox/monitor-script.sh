@@ -1,3 +1,9 @@
+# Script that captures image at Raspberri Pi and copies to host PC for 
+# analysis. Run script on Raspberri Pi.
+#
+#Every 5 seconds, take image at Raspberri Pi. Copy it to destination_dir
+# on host PC and delete it from Raspberri Pi to save space
+
 source_dir=../
 destination_dir=/var/www/html/
 

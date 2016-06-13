@@ -10,3 +10,4 @@ raspistill -v -e png -o image3.png -ISO 400 --vflip
 * Raspberri pi username = pi, pwd = Cymbolxxx
 * get ipaddress: ifconfig and it's the wlan0 inet addr  
 * Can ssh into this ipaddress from other local computers to access the computer (ssh pi@ipaddress) * To Learn: DLL, JSON, binary file with text header, ftp or ssh to host pc, ssh to local machine from internet  
+* Pi Mote address = pi@192.168.1.17

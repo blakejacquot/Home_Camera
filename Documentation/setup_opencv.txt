@@ -1,0 +1,20 @@
+Currently, opencv is installed in virtual environment cv
+To enter virtual environment cf: workon cv
+To exit: deactivate
+
+Ensure all build dependencies are installed:
+https://breakthrough.github.io/Installing-OpenCV/
+
+Execute the following instructions. After this, import cv2 in a Python
+program
+
+cd $HOME
+mkdir opencv_src
+cd opencv_src/
+git clone https://github.com/Itseez/opencv.git
+cd opencv/
+mkdir release
+cd release/
+cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local ..
+make
+sudo make install
