@@ -10,6 +10,7 @@ import numpy as np
 from subprocess import call
 import os
 import matplotlib.pyplot as plt
+import bigmoney
 
 pic_dir = "/home/blakejacquot/Desktop/pics"
 
