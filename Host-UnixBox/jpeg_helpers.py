@@ -1,10 +1,9 @@
-"""Methods for helping manipulate jpeg files
+"""Classes and Methods for helping manipulate jpeg files
 
 """
 
-import cv2
-import numpy as np
 from PIL import Image
+import numpy as np
 
 class Capture:
   """Object that contains metadata about the jpeg image at file_path
@@ -42,9 +41,3 @@ class Capture:
     self.blue_items['quad2'] = self.blue[self.rows/2: , 0:self.cols/2]
     self.blue_items['quad3'] = self.blue[0:self.rows/2 , self.cols/2:]
     self.blue_items['quad4'] = self.blue[self.rows/2: , self.cols/2:]
-
-def diffImg(t0, t1, t2):
-  #http://www.steinm.com/blog/motion-detection-webcam-python-opencv-differential-images/  
-  d1 = cv2.absdiff(t2, t1)
-  d2 = cv2.absdiff(t1, t0)
-  return cv2.bitwise_and(d1, d2)
