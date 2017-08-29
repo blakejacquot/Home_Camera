@@ -1,3 +1,7 @@
+Doc
+https://docs.google.com/document/d/1XyZwbAYvYLCGqxQg-ErhACFB1f6_ppejg7cKoo2JPQM/edit?usp=sharing
+
+
 # Ideas for projects
 * OpenCV to detect face and replace with lena or the Donald. Or object detection.  
 * Security monitor for garage doing change detection. Burst mode if found. May use NIR diode for illumination  
